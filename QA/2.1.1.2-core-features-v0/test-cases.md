@@ -15,4 +15,7 @@ Source PRD: `PRDs/M0/2.1.1.2-core-features-v0-prd.md`
 ## Acceptance
 - All scenarios pass; zero console errors; verdict p95 ≤ 3s; evidence in `test-results-<yyyy-mm-dd>.md` (Overall Status: Pass).
 
+---
+Latest Results: `QA/2.1.1.2-core-features-v0/test-results-2025-08-12.md`
+
 

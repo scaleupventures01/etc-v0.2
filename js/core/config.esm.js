@@ -4,7 +4,8 @@ export const AppConfig = {
     draft: 'tradingPlan_draft',
     history: 'tradingPlan_history',
     lastAccessed: 'tradingPlan_lastAccessed',
-    journal: 'journal_entries'
+    journal: 'journal_entries',
+    rules: 'etc_rules_v1'
   }
 };
 

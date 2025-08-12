@@ -20,7 +20,7 @@ owner: VP-Product / CTO / VP-Engineering
 | Phase | ID | Item | Status | Owner | PRD/Plan | Files/QA |
 | --- | --- | --- | --- | --- | --- | --- |
 | M0 — Founder Instance | 2.1.1.1 | Seed Founder tenant and admin user | Done (2025-08-12) | PM | `PRDs/M0/2.1.1.1-founder-tenant-seed-prd.md` | `QA/2.1.1.1-founder-tenant-seed/test-results-2025-08-12.md` |
-| M0 — Founder Instance | 2.1.1.2 | Core features v0: rules, verdict, journal, analytics | In Progress | Implementation Owner | `PRDs/M0/2.1.1.2-core-features-v0-prd.md` | `QA/2.1.1.2-core-features-v0//` |
+| M0 — Founder Instance | 2.1.1.2 | Core features v0: rules, verdict, journal, analytics | Ready | Implementation Owner | `PRDs/M0/2.1.1.2-core-features-v0-prd.md` | `QA/2.1.1.2-core-features-v0/test-results-2025-08-12.md` |
 | M0 — Founder Instance | 2.1.1.3 | Infrastructure baseline: Next.js + Postgres + Prisma | In Progress | CTO | `PRDs/M0/2.1.1.3-infrastructure-baseline-prd.md` | `QA/2.1.1.3-infrastructure-baseline/` |
 | M0 — Founder Instance | 2.1.1.4 | Authentication: email/password (Auth.js) | In Progress | Implementation Owner | `PRDs/M0/2.1.1.4-auth-email-password-prd.md` | `QA/2.1.1.4-auth-email-password/` |
 | M0 — Founder Instance | 2.1.1.5 | Testing v0: unit tests; manual QA run (smoke) | In Progress | QA | `PRDs/M0/2.1.1.5-testing-v0-prd.md` | `QA/2.1.1.5-testing-v0/` |

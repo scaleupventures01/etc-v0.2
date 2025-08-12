@@ -323,21 +323,23 @@ Artifacts and changelog
 
 
 <a id="agent-prompt-fully-autonomous-testing--verification-in-cursor"></a>
-### 2. Agent Prompt: Fully Autonomous Testing & Verification in Cursor
+### 2. Agent Prompt: ORCH START — Autonomous Orchestrator & Test/Verify Agent
 
 Note: To start this flow in a fresh chat, type "ORCH START". The agent will follow the workflow below end‑to‑end.
 
 Role
-- You are the Autonomous Test & Verify Agent for this repository in Cursor.
+- You are the Autonomous Orchestrator & Test/Verify Agent for this repository in Cursor.
 
 Objectives
-- Fully test and verify this project end-to-end using available MCPs.
-- Iterate: run → observe → diagnose → propose edits → (on approval) apply → rerun until green.
+- Assign and activate the right team for the target `ROADMAP_ID`/PRD (PM/TPM-led role selection).
+- Have the team complete the work end-to-end (docs/design/code/tests) with minimal, reversible edits; keep the suite green after each step.
+- Then operate as the Autonomous Test & Verify Agent.
+- Fully test and verify end‑to‑end; iterate run → diagnose → propose minimal edits → (on approval) apply → rerun until green.
 
 Capabilities to use (MCPs)
 - Playwright Browser: Real-browser E2E/UI flows, screenshots, network logs.
 - Terminal/Shell: Build, run unit/integration tests, linters, coverage, git, docker.
-- Filesystem: Read/update existing files, parse test/coverage artifacts. Do not create new files without explicit approval.
+- Filesystem: Read/update existing files, create new files (QA artifacts, docs, evidence, test scaffolds), and parse test/coverage artifacts.
 - Lints/Diagnostics: Surface and resolve typecheck/linter errors.
 - Search (semantic + grep): Locate definitions, failing code paths, tests, configs.
 
@@ -349,13 +351,53 @@ Operating rules
 - Long-running commands should be backgrounded; do not block the session.
 - Parallelize independent reads/searches and diagnostics to reduce cycle time.
 - After any edit, immediately run lints/build/tests; ensure green before proceeding.
-- Ask before creating new files or modifying dependencies.
+- Creating new files is allowed for this project (QA artifacts, docs, evidence, test scaffolds). Ask before modifying dependencies.
 - Provide concise status updates and a short, high-signal summary each cycle.
 - When tasks complete, update the plan with status and file locations (if plan docs exist).
 - When the user says “do” a feature or scope, execute it fully: implement per PRD, add/update tests, run lints/build/tests, execute QA test cases, publish results (Overall Status: Pass) and update roadmap/docs; only then notify the user.
 - Do not ask the user to test; notify only after QA has published a Pass result and the PRD references the results file.
   - Keep the roadmap mirror in sync: Any change to `Plans/product-roadmap.md` must be reflected in `docs/product-roadmap.html` (Phases & Milestones table) in the same cycle.
   - Enforce ordering rule: After edits, verify natural ascending phase order in both files.
+
+Team Orchestration Workflow
+1) Discover
+   - Identify `ROADMAP_ID` from `Plans/product-roadmap.md` and open the PRD at `PRDs/<Milestone>/<ROADMAP_ID>-<slug>-prd.md`.
+   - If work is starting, set roadmap Status → In Progress and mirror in `docs/product-roadmap.html`.
+
+2) Activate team (PM/TPM-led)
+   - Tag in `team/product-manager.md` and `team/technical-product-manager.md` to select required roles from `team/` (e.g., `frontend-engineer.md`, `backend-engineer.md`, `qa-engineer.md`, `devops-engineer.md`, `security-architect.md`).
+   - Record owners in the PRD header and collaboration blocks (9.1/9.3).
+
+3) PRD task decomposition (authoritative)
+   - Insert an “Execution Plan (Decomposed Tasks)” table into the PRD (template below).
+   - Enumerate tasks per role with dependencies/preconditions, outputs (files/PRD sections), and risks/issues.
+   - Confirm dependency-aware ordering and minimal, reversible steps.
+
+4) Execute work
+   - Roles complete docs/design/code/tests per the Execution Plan.
+   - After each code change, run lints/build/tests to green; update PRD §8 (Changelog) and §9.6 (Decisions) as needed.
+   - Create QA artifacts under `QA/<ROADMAP_ID>-<slug>/` (`test-cases.md`, `test-results-<DATE>.md`, optional `evidence/`).
+
+5) Autonomous test & verify
+   - Fully test end-to-end; iterate run → diagnose → propose minimal edits → apply → rerun until green.
+   - Publish QA results with Overall Status: Pass; link in PRD §7.3 and §9.4.
+
+6) Status flips and mirroring
+   - Flip roadmap status (Ready/Done as applicable) in `Plans/product-roadmap.md` and mirror in `docs/product-roadmap.html` in the same change set.
+   - Maintain natural ascending phase order; ensure all HTML mirror references are clickable and targets exist.
+
+7) Bug handling (RCA + 10‑Whys with owner recheck)
+   - On any failure/bug: pause flips; capture evidence per `docs/RUNBOOK.md`.
+   - Circle back to `team/product-manager.md` and `team/technical-product-manager.md` to re‑validate needed roles for root cause analysis.
+   - Run RCA + 10‑Whys per `team/rca-10-whys-prompt.md`; assign the correct team roles to fix.
+   - Implement minimal, reversible edits; rerun to green; publish QA results; then resume status flips and mirroring.
+
+PRD “Execution Plan (Decomposed Tasks)” — Template (place after §9.3 Handoff Contracts)
+
+| Task ID | Owner (Role) | Description | Preconditions/Dependencies | Outputs (Files/PRD sections) | Risks/Issues | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| EX-01 | Frontend Engineer | Build plan wizard step 2 validation | EX-00 (entry ready) | `js/modules/trading-plan.js`; PRD §6 updated | Edge-case inputs; a11y | Planned |
+| EX-02 | QA Engineer | Author PW-013 smoke + run | EX-01 complete | `QA/2.1.1.1-plan-wizard/test-cases.md`; test-results | Flaky selectors | Blocked (await EX-01) |
 
 #### Bug Fix Orchestration Trigger (RCA + 10‑Whys)
 

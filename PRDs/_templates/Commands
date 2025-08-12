@@ -1,4 +1,5 @@
 ORCH START
+# Orchestrates team (PM/TPM-led role selection), creates PRD Execution Plan, executes work, then autonomous test/verify and gates.
 DO RANGE START=2.3.3.1 END=2.3.3.7
 
 # Scaffolding (per README and PRDs/README)

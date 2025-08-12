@@ -4,6 +4,10 @@ import { seedFounderTenant } from './core/seed.esm.js';
 import { UIComponents, UINavigation, UIErrorHandler } from './ui/index.js';
 import { TradingPlan, Verdict, Journal, Tenant } from './modules/index.js';
 import { getCurrentRoute, onRouteChange, navigateTo } from './ui/router.esm.js';
+import { showWizard, hideWizard } from './ui/views/wizard-view.esm.js';
+import { showVerdict, hideVerdict } from './ui/views/verdict-view.esm.js';
+import { showJournal, hideJournal } from './ui/views/journal-view.esm.js';
+import { showSaved, hideSaved } from './ui/views/saved-plan-view.esm.js';
 
 // Expose a DI-ready app object for future phases
 export const App = {
@@ -56,6 +60,17 @@ function render(name) {
     if (id === activeId) el.classList.remove('hidden');
     else el.classList.add('hidden');
   });
+
+  // Wire views when shown
+  if (name === 'wizard' || name === 'landing') {
+    showWizard(); hideVerdict(); hideJournal(); hideSaved();
+  } else if (name === 'verdict') {
+    showVerdict(); hideWizard(); hideJournal(); hideSaved();
+  } else if (name === 'journal') {
+    showJournal(); hideWizard(); hideVerdict(); hideSaved();
+  } else if (name === 'saved') {
+    showSaved(); hideWizard(); hideVerdict(); hideJournal();
+  }
 }
 
 function boot() {
