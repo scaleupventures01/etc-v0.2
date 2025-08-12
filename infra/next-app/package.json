@@ -9,7 +9,7 @@
     "start": "next start",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --skip-generate",
-    "seed": "ts-node --transpile-only scripts/seed.ts"
+    "seed": "node scripts/seed.mjs"
   },
   "dependencies": {
     "@prisma/client": "^5.18.0",

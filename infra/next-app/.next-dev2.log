@@ -1,0 +1,17 @@
+
+> etc-next-app@0.0.1 dev
+> next dev --turbo
+
+  ▲ Next.js 14.2.31 (turbo)
+  - Local:        http://localhost:3031
+  - Environments: .env
+
+ ✓ Starting...
+ ⚠ Invalid next.config.mjs options detected: 
+ ⚠     Expected object, received boolean at "experimental.serverActions"
+ ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+ ⚠ Server Actions are available by default now, `experimental.serverActions` option can be safely removed.
+ ✓ Ready in 902ms
+ ✓ Compiled /health in 95ms
+ GET /health 200 in 152ms
+[?25h
