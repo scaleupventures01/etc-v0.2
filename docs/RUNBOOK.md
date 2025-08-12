@@ -44,6 +44,33 @@ L36: - [ ] Excellence Checklist applied (summary, evidence links, roadmap/mirror
 - Reporting: Publish results in `QA/file-architecture-split/test-results-YYYY-MM-DD.md` under "Phase 4 (2.3.2)".
 
 
+## Dependency Management Policy
+
+### Scope
+- Applies to both workspaces: project root (`mvp v.02`) and `infra/next-app`.
+
+### Approval Rules
+- Project-local dependency changes are pre-approved:
+  - Editing `package.json` and lockfiles in-repo
+  - Running installs in-repo (e.g., `npm install`, `npm ci`)
+
+
+### Procedure (Local changes)
+1. Use `npm` (lockfile present) unless a package specifies otherwise.
+2. Install within the repo only:
+   - Root: `npm install <pkg>@<version>` at `mvp v.02/`
+   - Next app: `cd infra/next-app && npm install <pkg>@<version>`
+3. Commit both `package.json` and lockfile changes together.
+
+### Recording Changes
+- Summarize dependency deltas in the relevant PRD section 8 (Changelog).
+- If deps impact functionality or size gates, include a note in QA results for the affected feature.
+
+### Lockfiles and Reproducibility
+- Prefer `npm ci` in CI for deterministic installs.
+- Do not hand-edit lockfiles.
+
+
 ## Release/Push Procedure
 
 Preconditions
