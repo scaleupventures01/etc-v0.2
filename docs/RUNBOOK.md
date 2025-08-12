@@ -43,3 +43,17 @@ L36: - [ ] Excellence Checklist applied (summary, evidence links, roadmap/mirror
 - CI Gate: Treat WARN as advisory. Treat FAIL as blocking. Integrate a CI step that executes `node lib/check-size.mjs` and fails the job on non‑zero exit.
 - Reporting: Publish results in `QA/file-architecture-split/test-results-YYYY-MM-DD.md` under "Phase 4 (2.3.2)".
 
+
+## Release/Push Procedure
+
+Preconditions
+- QA results published with Overall Status: Pass and linked in PRD 9.4
+- Roadmap updated and HTML mirror in sync (same change set)
+
+Steps
+- Merge/push to default branch (`main`): `git push -u origin main`
+- Optional: create and push a tag: `git tag -a vX.Y -m "<release notes>" && git push --tags`
+
+Notes
+- For multi-feature ranges, repeat per feature after each Done flip; ensure ordering rules hold after merges.
+

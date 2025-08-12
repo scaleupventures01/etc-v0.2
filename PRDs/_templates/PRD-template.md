@@ -102,6 +102,13 @@ milestone: M<0-9> (<roadmap id e.g., 2.1.1.1>)
 - Action: Flip status in roadmap and start implementation
 
 
+<a id="sec-9-9"></a>
+### 9.9 Release/Push
+- After QA Pass and final approvals, merge/push the change to the default branch (`main`).
+- Commands (reference): `git push -u origin main`
+- Optional tagging: `git tag -a vX.Y -m "<release notes>" && git push --tags`
+
+
 <a id="sec-10"></a>
 ## 10. Excellence Checklist (link evidence per `docs/Excellence-Standard.md`)
 - [ ] Scope/intent clear; dependencies and order documented

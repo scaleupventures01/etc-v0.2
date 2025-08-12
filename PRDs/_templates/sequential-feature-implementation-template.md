@@ -94,6 +94,11 @@ PER‑FEATURE WORKFLOW
      - Convert all referenced paths to clickable links.
      - Populate/update the “Output Files/Folder” column with links to primary artifacts (e.g., `index.html`, `js/core/`, QA results folder).
 
+9) Release/Push
+   - Merge/push to the default branch (`main`).
+   - Commands (reference): `git push -u origin main`
+   - Optional tagging: `git tag -a vX.Y -m "<release notes>" && git push --tags`
+
 RANGE EXECUTION LOOP (Range Mode)
 ---------------------------------
 For each roadmap line from [START_ROADMAP_ID] to [END_ROADMAP_ID] inclusive, in document order:

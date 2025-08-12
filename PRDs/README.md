@@ -108,6 +108,7 @@ Done gate
 - [ ] CI: Lint/build/tests green (run link or screenshot)
 - [ ] QA: `QA/<id>-<slug>/test-results-YYYY-MM-DD.md` (Overall Status: Pass)
 - [ ] Roadmap + HTML mirror updated in the same commit
+- [ ] Release/Push: Merged and pushed to the default branch (`main`); tag created if applicable (`git tag -a vX.Y -m "<msg>" && git push --tags`)
 - [ ] Perf evidence + CI budgets (if applicable)
 
 - Notify only after passing QA

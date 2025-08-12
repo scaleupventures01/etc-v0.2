@@ -15,3 +15,9 @@ npm run scaffold:feature -- --id <ID> [--kickoff]
 # Notes:
 # - Without --kickoff: creates PRD + QA only
 # - Always updates Plans/product-roadmap.md and mirrors docs/product-roadmap.html
+
+# Release / Push (after QA Pass and approvals)
+git push -u origin main
+# Optional: tag the release
+git tag -a vX.Y -m "<release notes>"
+git push --tags

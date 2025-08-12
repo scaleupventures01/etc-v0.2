@@ -6,6 +6,8 @@ Done means shipped code + green CI + published QA Pass + roadmap/mirror updated 
 
 See `PRDs/README.md` for the enforced Definition of Done, Ready/Done gates, Proof‑of‑Done checklist, and CI enforcement.
 
+Final action after QA Pass and roadmap mirror update: push/merge to the default branch (`main`); optionally tag the release.
+
 ## Excellence Standard
 
 All roles follow the Excellence Standard (best‑work‑first, minimal tokens, evidence‑driven). See `docs/Excellence-Standard.md` and PRD section 10 (Excellence Checklist) for required links and gates.
