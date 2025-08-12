@@ -1,0 +1,17 @@
+ORCH START
+DO RANGE START=2.3.3.1 END=2.3.3.7
+
+# Scaffolding (per README and PRDs/README)
+# Chat triggers (type these in chat, no terminal required):
+SCAFFOLD FEATURE <ID> [--kickoff]
+Create PRD <ID>
+Create PRD and QA <ID>
+Scaffold <ID>
+Create PRD <ID> with kickoff
+
+# Terminal equivalent:
+npm run scaffold:feature -- --id <ID> [--kickoff]
+
+# Notes:
+# - Without --kickoff: creates PRD + QA only
+# - Always updates Plans/product-roadmap.md and mirrors docs/product-roadmap.html

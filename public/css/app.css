@@ -1,0 +1,6 @@
+/* Public copy for HTTP bootstrap (2.3.5 asset governance). */
+:root { color-scheme: light dark; }
+body { margin: 0; font: 14px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+.hidden { display: none !important; }
+#app { min-height: 100vh; }
+

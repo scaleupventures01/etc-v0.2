@@ -1,0 +1,39 @@
+{
+  "name": "elite-trading-coach-ai-mvp-v01",
+  "version": "0.0.1",
+  "private": true,
+  "description": "MVP local-first app with plan wizard, verdict, journal; Phase 2.3.3 foundation tooling.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build; node scripts/simple-copy.mjs",
+    "preview": "vite preview",
+    "preview:stop": "pkill -f \"vite preview\" || true; sh -c 'pids=$(lsof -ti :5173 :5174 2>/dev/null); [ -n \"$pids\" ] && kill -9 $pids || true'",
+    "preview:smoke": "npm run preview:stop; rm -f .preview.log; (npm run preview -- --port 0 --strictPort=false > .preview.log 2>&1 &) ; sleep 2; url=$(grep -Eo 'Local:\\s+http://localhost:[0-9]+' .preview.log | head -1 | awk '{print $2}'); code=$(curl -s -o /dev/null -w \"%{http_code}\" \"$url\" || true); npm run preview:stop; test \"$code\" = \"200\"",
+    "verify:bootstrap": "npm run preview:stop; npm run build; rm -f .preview.log; (npm run preview -- --port 0 --strictPort=false > .preview.log 2>&1 &) ; sleep 2; base=$(grep -Eo 'Local:\\s+http://localhost:[0-9]+' .preview.log | head -1 | awk '{print $2}'); r1=$(curl -s -o /dev/null -w \"%{http_code}\" \"$base/\" || true); r2=$(curl -s -o /dev/null -w \"%{http_code}\" \"$base/js/entry-loader.js\" || true); r3=$(curl -s -o /dev/null -w \"%{http_code}\" \"$base/favicon.ico\" || true); npm run preview:stop; test \"$r1\" = \"200\" -a \"$r2\" = \"200\" -a \"$r3\" = \"200\"",
+    "e2e": "playwright test --reporter=list",
+    "e2e:local": "npm run preview:stop && (npm run preview -- --port 5173 --strictPort=true > .preview.log 2>&1 &) && sleep 2 && npm run e2e && npm run preview:stop",
+    "e2e:install": "npx playwright install --with-deps | cat",
+    "lint": "eslint . --ext .js,.mjs,.cjs --max-warnings=0",
+    "format": "prettier . --write",
+    "size": "node lib/check-size.mjs --report",
+    "html:compact": "node scripts/compact-html.mjs",
+    "check:roadmap": "node lib/check-roadmap-sync.mjs",
+    "build:roadmap": "node lib/generate-roadmap-html.mjs",
+    "verify": "npm run check:roadmap && node lib/check-size.mjs --report",
+    "ensure:esm": "node scripts/ensure-esm-entry.mjs",
+    "test": "vitest run",
+    "scaffold:feature": "node lib/scaffold-feature.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.46.0",
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "eslint": "^9.33.0",
+    "eslint-config-prettier": "^9.1.0",
+    "happy-dom": "^18.0.1",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vitest": "^2.1.1"
+  }
+}

@@ -1,0 +1,689 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Product Roadmap</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; margin:20px;}
+    h1,h2{margin:0 0 12px}
+    table{border-collapse:collapse; width:100%; margin:16px 0}
+    th,td{border:1px solid #ddd; padding:8px; font-size:14px; vertical-align:top}
+    th{background:#f7f7f7; text-align:left}
+    details.panel{border:1px solid #eee; padding:8px; border-radius:6px; margin:10px 0}
+    summary{cursor:pointer; font-weight:600}
+    .cards{display:flex; gap:12px; margin:10px 0 20px}
+    .card{flex:1; border:1px solid #eee; border-radius:8px; padding:12px}
+    .bar{height:6px; background:#eee; border-radius:4px; overflow:hidden}
+    .bar span{display:block; height:6px; width:0; background:#f1c40f}
+    .muted{color:#666; font-size:12px}
+    .file-link{white-space:nowrap}
+  </style>
+  <script>
+    function expandAll(){ document.querySelectorAll('details').forEach(d=>d.open=true); }
+    function collapseAll(){ document.querySelectorAll('details').forEach(d=>d.open=false); }
+  </script>
+</head>
+<body>
+  <h1>Product Roadmap</h1>
+  <div class="muted">Last Mirror Sync: <span data-sync>2025-08-12 03:25:27</span></div>
+
+  <div class="cards">
+    <a id="phase-M2" href="#M2" class="card" style="text-decoration:none;color:inherit">
+      <div><strong>M2</strong> — White‑Label Foundation</div>
+      <div class="bar"><span style="display:block; height:6px; width:0"></span></div>
+      <div class="muted"><span data-pct>0%</span> complete</div>
+    </a>
+    <a id="phase-M5" href="#M5" class="card" style="text-decoration:none;color:inherit">
+      <div><strong>M5</strong> — Billing Enhancements</div>
+      <div class="bar"><span style="display:block; height:6px; width:0"></span></div>
+      <div class="muted"><span data-pct>0%</span> complete</div>
+    </a>
+    <a id="phase-M3" href="#M3" class="card" style="text-decoration:none;color:inherit">
+      <div><strong>M3</strong> — Legal/Contracts</div>
+      <div class="bar"><span style="display:block; height:6px; width:0"></span></div>
+      <div class="muted"><span data-pct>0%</span> complete</div>
+    </a>
+  </div>
+
+  <div style="margin:10px 0 16px">
+    <button onclick="expandAll()">Expand all</button>
+    <button onclick="collapseAll()">Collapse all</button>
+  </div>
+
+  <div class="section">
+    <h2>2. Phases and Milestones</h2>
+
+    <a id="M0"></a>
+    <details class="panel" open>
+      <summary>M0 — Founder Instance (2.1.1.x)</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase</th><th>ID</th><th>Item</th><th>Status</th><th>Owner</th><th>PRD/Plan</th><th>Files/QA</th><th>Output Files/Folder</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.1</td>
+<td>Seed Founder tenant and admin user</td>
+<td>Done (2025-08-12)</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.1-founder-tenant-seed-prd.md">PRDs/M0/2.1.1.1-founder-tenant-seed-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.1-founder-tenant-seed/test-results-2025-08-12.md">QA/2.1.1.1-founder-tenant-seed/test-results-2025-08-12.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.1-founder-tenant-seed/test-results-2025-08-12.md">QA/2.1.1.1-founder-tenant-seed/test-results-2025-08-12.md</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.2</td>
+<td>Core features v0: rules, verdict, journal, analytics</td>
+<td>In Progress</td>
+<td>Implementation Owner</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.2-core-features-v0-prd.md">PRDs/M0/2.1.1.2-core-features-v0-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.2-core-features-v0//">QA/2.1.1.2-core-features-v0//</a></td>
+<td><a class="file-link" href="../QA/2.1.1.2-core-features-v0//">QA/2.1.1.2-core-features-v0//</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.3</td>
+<td>Infrastructure baseline: Next.js + Postgres + Prisma</td>
+<td>In Progress</td>
+<td>CTO</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.3-infrastructure-baseline-prd.md">PRDs/M0/2.1.1.3-infrastructure-baseline-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.3-infrastructure-baseline/">QA/2.1.1.3-infrastructure-baseline/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.3-infrastructure-baseline/">QA/2.1.1.3-infrastructure-baseline/</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.4</td>
+<td>Authentication: email/password (Auth.js)</td>
+<td>In Progress</td>
+<td>Implementation Owner</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.4-auth-email-password-prd.md">PRDs/M0/2.1.1.4-auth-email-password-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.4-auth-email-password/">QA/2.1.1.4-auth-email-password/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.4-auth-email-password/">QA/2.1.1.4-auth-email-password/</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.5</td>
+<td>Testing v0: unit tests; manual QA run (smoke)</td>
+<td>In Progress</td>
+<td>QA</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.5-testing-v0-prd.md">PRDs/M0/2.1.1.5-testing-v0-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.5-testing-v0/">QA/2.1.1.5-testing-v0/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.5-testing-v0/">QA/2.1.1.5-testing-v0/</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.6</td>
+<td>Deployment: Vercel prod + basic runbook</td>
+<td>In Progress</td>
+<td>SRE/DevOps</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.6-deployment-vercel-runbook-prd.md">PRDs/M0/2.1.1.6-deployment-vercel-runbook-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.6-deployment-vercel-runbook/">QA/2.1.1.6-deployment-vercel-runbook/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.6-deployment-vercel-runbook/">QA/2.1.1.6-deployment-vercel-runbook/</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.7</td>
+<td>Acceptance: 100 trades processed; verdict p95 ≤3s</td>
+<td>In Progress</td>
+<td>VP‑Product</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.7-acceptance-100-trades-prd.md">PRDs/M0/2.1.1.7-acceptance-100-trades-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.7-acceptance-100-trades/">QA/2.1.1.7-acceptance-100-trades/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.7-acceptance-100-trades/">QA/2.1.1.7-acceptance-100-trades/</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.8</td>
+<td>Rehab routine checklist (visualization, market mapping, breath/verse, expectation neutraliser, risk check)</td>
+<td>In Progress</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.8-rehab-checklist-prd.md">PRDs/M0/2.1.1.8-rehab-checklist-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.8-rehab-checklist/">QA/2.1.1.8-rehab-checklist/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.8-rehab-checklist/">QA/2.1.1.8-rehab-checklist/</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.9</td>
+<td>Trade ticket cap + counter‑trend brake (soft‑block with override note)</td>
+<td>In Progress</td>
+<td>Implementation Owner</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.9-trade-limits-prd.md">PRDs/M0/2.1.1.9-trade-limits-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.9-trade-limits/">QA/2.1.1.9-trade-limits/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.9-trade-limits/">QA/2.1.1.9-trade-limits/</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.10</td>
+<td>Journal MFE capture and MFE‑Error‑R (Stop$, MFE$; derived metric)</td>
+<td>In Progress</td>
+<td>Implementation Owner</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.10-mfe-tracking-prd.md">PRDs/M0/2.1.1.10-mfe-tracking-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.10-mfe-tracking/">QA/2.1.1.10-mfe-tracking/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.10-mfe-tracking/">QA/2.1.1.10-mfe-tracking/</a></td>
+</tr>
+<tr>
+<td>M0 — Founder Instance</td>
+<td>2.1.1.11</td>
+<td>ATR volatility advisory (manual ATR input → advisory gating)</td>
+<td>In Progress</td>
+<td>CTO</td>
+<td><a class="file-link" href="../PRDs/M0/2.1.1.11-atr-advisory-prd.md">PRDs/M0/2.1.1.11-atr-advisory-prd.md</a></td>
+<td><a class="file-link" href="../QA/2.1.1.11-atr-advisory/">QA/2.1.1.11-atr-advisory/</a></td>
+<td><a class="file-link" href="../QA/2.1.1.11-atr-advisory/">QA/2.1.1.11-atr-advisory/</a></td>
+</tr>
+</tbody>
+      </table>
+    </details>
+
+    <a id="M1"></a>
+    <details class="panel">
+      <summary>M1 — Stability Improvements (2.2.1.x)</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase</th><th>ID</th><th>Item</th><th>Status</th><th>Owner</th><th>PRD/Plan</th><th>Files/QA</th><th>Output Files/Folder</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr>
+<td>M1 — Stability Improvements</td>
+<td>2.2.1.1</td>
+<td>Input validation: sanitize all user inputs</td>
+<td>Planned</td>
+<td>Implementation Owner</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M1 — Stability Improvements</td>
+<td>2.2.1.2</td>
+<td>Error handling: graceful failures, user messages</td>
+<td>Planned</td>
+<td>Implementation Owner</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M1 — Stability Improvements</td>
+<td>2.2.1.3</td>
+<td>Performance: query optimization, caching layer</td>
+<td>Planned</td>
+<td>CTO</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M1 — Stability Improvements</td>
+<td>2.2.1.4</td>
+<td>Monitoring: Sentry baseline</td>
+<td>Planned</td>
+<td>SRE/DevOps</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M1 — Stability Improvements</td>
+<td>2.2.1.5</td>
+<td>Backup: daily automated DB backup</td>
+<td>Planned</td>
+<td>SRE/DevOps</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M1 — Stability Improvements</td>
+<td>2.2.1.6</td>
+<td>Security: HTTPS, rate limiting, CORS</td>
+<td>Planned</td>
+<td>Security</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M1 — Stability Improvements</td>
+<td>2.2.1.7</td>
+<td>Documentation: API + deployment guide</td>
+<td>Planned</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+      </table>
+    </details>
+
+    <a id="M2"></a>
+    <details class="panel">
+      <summary>M2 — White‑Label Foundation (2.3.1.x)</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase</th><th>ID</th><th>Item</th><th>Status</th><th>Owner</th><th>PRD/Plan</th><th>Files/QA</th><th>Output Files/Folder</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr>
+<td>M2 — White‑Label Foundation</td>
+<td>2.3.1.1</td>
+<td>Multi‑tenancy (shared schema + RLS)</td>
+<td>Planned</td>
+<td>CTO</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M2 — White‑Label Foundation</td>
+<td>2.3.1.2</td>
+<td>Theming engine (CSS variables/tokens)</td>
+<td>Planned</td>
+<td>Frontend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M2 — White‑Label Foundation</td>
+<td>2.3.1.3</td>
+<td>Logo upload/resize pipeline</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M2 — White‑Label Foundation</td>
+<td>2.3.1.4</td>
+<td>Domain mapping (CNAME)</td>
+<td>Planned</td>
+<td>SRE/DevOps</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M2 — White‑Label Foundation</td>
+<td>2.3.1.5</td>
+<td>Tenant isolation & access controls</td>
+<td>Planned</td>
+<td>Security</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M2 — White‑Label Foundation</td>
+<td>2.3.1.6</td>
+<td>Admin panel: basic tenant mgmt</td>
+<td>Planned</td>
+<td>Implementation Owner</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M2 — White‑Label Foundation</td>
+<td>2.3.1.7</td>
+<td>Onboarding flow: self‑service tenant creation</td>
+<td>Planned</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+      </table>
+    </details>
+
+    <a id="M3"></a>
+    <details class="panel">
+      <summary>M3 — Legal/Contracts (2.4.1.x)</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase</th><th>ID</th><th>Item</th><th>Status</th><th>Owner</th><th>PRD/Plan</th><th>Files/QA</th><th>Output Files/Folder</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr>
+<td>M3 — Legal/Contracts</td>
+<td>2.4.1.1</td>
+<td>ToS implementation: versioning/acceptance</td>
+<td>Planned</td>
+<td>PM/Legal</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M3 — Legal/Contracts</td>
+<td>2.4.1.2</td>
+<td>Consent system: schema + UI</td>
+<td>Planned</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M3 — Legal/Contracts</td>
+<td>2.4.1.3</td>
+<td>Legal review: external counsel approval</td>
+<td>Planned</td>
+<td>Legal</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M3 — Legal/Contracts</td>
+<td>2.4.1.4</td>
+<td>Audit logging: agreement interactions</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M3 — Legal/Contracts</td>
+<td>2.4.1.5</td>
+<td>Document storage: encrypted S3 bucket</td>
+<td>Planned</td>
+<td>SRE/DevOps</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M3 — Legal/Contracts</td>
+<td>2.4.1.6</td>
+<td>API endpoints: consent status/updates</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M3 — Legal/Contracts</td>
+<td>2.4.1.7</td>
+<td>Compliance reports/export</td>
+<td>Planned</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+      </table>
+    </details>
+
+    <a id="M4"></a>
+    <details class="panel">
+      <summary>M4 — Billing V1 (2.5.1.x)</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase</th><th>ID</th><th>Item</th><th>Status</th><th>Owner</th><th>PRD/Plan</th><th>Files/QA</th><th>Output Files/Folder</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr>
+<td>M4 — Billing V1</td>
+<td>2.5.1.1</td>
+<td>Stripe integration (Connect/account setup)</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M4 — Billing V1</td>
+<td>2.5.1.2</td>
+<td>Invoice generation (PDF)</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M4 — Billing V1</td>
+<td>2.5.1.3</td>
+<td>Payment collection: card charging logic</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M4 — Billing V1</td>
+<td>2.5.1.4</td>
+<td>Dunning: email sequences, retry logic</td>
+<td>Planned</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M4 — Billing V1</td>
+<td>2.5.1.5</td>
+<td>Ledger system: transaction tracking</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M4 — Billing V1</td>
+<td>2.5.1.6</td>
+<td>Reporting: revenue/MRR/churn</td>
+<td>Planned</td>
+<td>Data</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M4 — Billing V1</td>
+<td>2.5.1.7</td>
+<td>Webhook handling: payment events</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+      </table>
+    </details>
+
+    <a id="M5"></a>
+    <details class="panel">
+      <summary>M5 — Billing Enhancements (2.6.1.x)</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase</th><th>ID</th><th>Item</th><th>Status</th><th>Owner</th><th>PRD/Plan</th><th>Files/QA</th><th>Output Files/Folder</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr>
+<td>M5 — Billing Enhancements</td>
+<td>2.6.1.1</td>
+<td>Weekly billing: threshold detection/switching</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M5 — Billing Enhancements</td>
+<td>2.6.1.2</td>
+<td>Settlement reports</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M5 — Billing Enhancements</td>
+<td>2.6.1.3</td>
+<td>Dispute system</td>
+<td>Planned</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M5 — Billing Enhancements</td>
+<td>2.6.1.4</td>
+<td>Revenue recognition: journal entries</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M5 — Billing Enhancements</td>
+<td>2.6.1.5</td>
+<td>Tax calculation by jurisdiction</td>
+<td>Planned</td>
+<td>Backend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M5 — Billing Enhancements</td>
+<td>2.6.1.6</td>
+<td>Partner portal: billing history/downloads</td>
+<td>Planned</td>
+<td>Frontend</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M5 — Billing Enhancements</td>
+<td>2.6.1.7</td>
+<td>Forecasting: predictive revenue models</td>
+<td>Planned</td>
+<td>Data</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+      </table>
+    </details>
+
+    <a id="M6"></a>
+    <details class="panel">
+      <summary>M6 — Partner Launch (2.7.1.x)</summary>
+      <table>
+        <thead>
+          <tr>
+            <th>Phase</th><th>ID</th><th>Item</th><th>Status</th><th>Owner</th><th>PRD/Plan</th><th>Files/QA</th><th>Output Files/Folder</th>
+          </tr>
+        </thead>
+        <tbody>
+<tr>
+<td>M6 — Partner Launch</td>
+<td>2.7.1.1</td>
+<td>Partner selection & vetting</td>
+<td>Planned</td>
+<td>VP‑Product</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M6 — Partner Launch</td>
+<td>2.7.1.2</td>
+<td>Onboarding package: videos/docs/support</td>
+<td>Planned</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M6 — Partner Launch</td>
+<td>2.7.1.3</td>
+<td>Launch campaign: email/webinar</td>
+<td>Planned</td>
+<td>PM/Marketing</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M6 — Partner Launch</td>
+<td>2.7.1.4</td>
+<td>Support preparation: macros/FAQ/training</td>
+<td>Planned</td>
+<td>Support</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M6 — Partner Launch</td>
+<td>2.7.1.5</td>
+<td>Monitoring: real‑time metrics dashboard</td>
+<td>Planned</td>
+<td>SRE/DevOps</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M6 — Partner Launch</td>
+<td>2.7.1.6</td>
+<td>Feedback loop: daily first‑week check‑ins</td>
+<td>Planned</td>
+<td>PM</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+<tr>
+<td>M6 — Partner Launch</td>
+<td>2.7.1.7</td>
+<td>Success: 200 seats, <6% churn</td>
+<td>Planned</td>
+<td>VP‑Product</td>
+<td><a class="file-link" href="../PRDs/README.md">PRDs/README.md</a></td>
+<td>—</td>
+<td>—</td>
+</tr>
+</tbody>
+      </table>
+    </details>
+  </div>
+
+</body>
+</html>
+
+
