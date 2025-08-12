@@ -1,4 +1,5 @@
 import { PrismaClient } from '@prisma/client';
+import argon2 from 'argon2';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -27,8 +28,8 @@ const prisma = new PrismaClient();
 
 async function main() {
   const tenantName = process.env.FOUNDER_TENANT_NAME || 'Founder';
-  const adminEmail = process.env.ADMIN_EMAIL;
-  const passwordHash = process.env.ADMIN_PASSWORD_HASH;
+  const adminEmail = process.env.ADMIN_EMAIL || 'admin@example.com';
+  const passwordHash = process.env.ADMIN_PASSWORD_HASH || (process.env.ADMIN_PASSWORD ? await argon2.hash(process.env.ADMIN_PASSWORD) : undefined);
   const firstLoginToken = process.env.ADMIN_FIRST_LOGIN_TOKEN;
 
   if (!adminEmail || (!passwordHash && !firstLoginToken)) {

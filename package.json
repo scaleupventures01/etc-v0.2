@@ -22,7 +22,9 @@
     "verify": "npm run check:roadmap && node lib/check-size.mjs --report",
     "ensure:esm": "node scripts/ensure-esm-entry.mjs",
     "test": "vitest run",
-    "scaffold:feature": "node lib/scaffold-feature.mjs"
+    "scaffold:feature": "node lib/scaffold-feature.mjs",
+    "orch:start": "node lib/orch-start.mjs",
+    "orch:start:dry": "node lib/orch-start.mjs --dry-run"
   },
   "devDependencies": {
     "@playwright/test": "^1.46.0",

@@ -22,3 +22,8 @@ git push -u origin main
 # Optional: tag the release
 git tag -a vX.Y -m "<release notes>"
 git push --tags
+
+
+Email: admin@example.com
+Password: admin123
+Login URL: http://localhost:3000/login

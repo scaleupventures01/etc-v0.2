@@ -19,7 +19,7 @@ SCOPE MODES
 
 - Range Mode:
   - Range: [START_ROADMAP_ID] → [END_ROADMAP_ID] (inclusive), in the exact document order found in `Plans/product-roadmap.md`.
-  - Process one roadmap line at a time using the Per‑Feature Workflow below; do not pause between items unless a repository rule requires explicit approval (e.g., creating new files or changing dependencies).
+  - Process one roadmap line at a time using the Per‑Feature Workflow below; do not pause between items unless unresolved PRD questions block progress.
   - Continue until [END_ROADMAP_ID] completes, then notify the user.
 
 - List Mode:
@@ -103,7 +103,7 @@ RANGE EXECUTION LOOP (Range Mode)
 ---------------------------------
 For each roadmap line from [START_ROADMAP_ID] to [END_ROADMAP_ID] inclusive, in document order:
    - Apply the Per‑Feature Workflow steps 1→8.
-   - Do not pause between items unless repository rules require explicit approval (e.g., creating files/deps) or unresolved PRD questions block progress.
+   - Do not pause between items unless unresolved PRD questions block progress.
 
 LIST EXECUTION LOOP (List Mode)
 -------------------------------

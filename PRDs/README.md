@@ -117,8 +117,8 @@ Done gate
     - Links/paths to PRD, code, and QA results
     - Any migration or setup notes
 
-- Exceptions / Blockers
-  - If a required decision is unclear, or an action would violate the “no new files without prior approval” policy, pause and ask for guidance.
+ - Exceptions / Blockers
+   - If a required decision is unclear, pause and ask for guidance.
 
 ### Global Execution & Sequencing Standard (All Roles, All Work)
 
@@ -351,7 +351,7 @@ Operating rules
 - Long-running commands should be backgrounded; do not block the session.
 - Parallelize independent reads/searches and diagnostics to reduce cycle time.
 - After any edit, immediately run lints/build/tests; ensure green before proceeding.
-- Creating new files is allowed for this project (QA artifacts, docs, evidence, test scaffolds). Ask before modifying dependencies.
+- Creating new files is allowed for this project (QA artifacts, docs, evidence, test scaffolds).
 - Provide concise status updates and a short, high-signal summary each cycle.
 - When tasks complete, update the plan with status and file locations (if plan docs exist).
 - When the user says “do” a feature or scope, execute it fully: implement per PRD, add/update tests, run lints/build/tests, execute QA test cases, publish results (Overall Status: Pass) and update roadmap/docs; only then notify the user.
@@ -548,10 +548,10 @@ Reporting and plan updates
   - Examples: `Plans/product-roadmap.md`, `docs/product-roadmap.html`, `Input/mvp project plan.md`.
   - Note the ordering validation in your summary when roadmap is touched.
 
-Safety and constraints
-- Never create files, migrate schemas, or change dependencies without explicit approval.
-- Prefer minimal, reversible edits; avoid broad refactors during test-fix loops.
-- Keep summaries concise; focus on actionable items and file paths.
+ Safety and constraints
+ - Creating new files is allowed for this project (QA artifacts, docs, evidence, test scaffolds).
+ - Prefer minimal, reversible edits; avoid broad refactors during test-fix loops.
+ - Keep summaries concise; focus on actionable items and file paths.
 
 Environment assumptions
 - macOS host; standard POSIX shell behavior.
